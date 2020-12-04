@@ -36,12 +36,9 @@ def num_valid_passwords_new_policy():
         letter = conditions[1]
         password = line_split[1].lstrip()
 
-        first_condition = True if password[first_spot - 1] == letter else False
-        second_condition = True if password[second_spot - 1] == letter else False
-
-        if first_condition and not second_condition:
+        if password[first_spot - 1] == letter and not password[second_spot - 1] == letter:
             valid_passwords += 1
-        elif second_condition and not first_condition:
+        elif password[second_spot - 1] == letter and not password[first_spot - 1] == letter:
             valid_passwords += 1
 
     f.close()
