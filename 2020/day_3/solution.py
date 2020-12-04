@@ -10,9 +10,7 @@ def trees_encountered():
         if pattern[idx] == '#':
             trees += 1
 
-        tmp_idx = idx + 3
-        pattern_size = len(pattern)
-        idx = tmp_idx % pattern_size if tmp_idx > pattern_size - 1 else tmp_idx
+        idx = (idx + 3) % len(pattern)
 
     f.close()
     return trees
@@ -51,9 +49,7 @@ def toboggan_and_count(forest, slope):
         if position == '#':
             trees += 1
 
-        tmp_idx = curr_right + right
-        pattern_size = len(pattern)
-        curr_right = tmp_idx % pattern_size if tmp_idx > pattern_size - 1 else tmp_idx
+        curr_right = (curr_right + right) % len(pattern)
         curr_down += down
 
     return trees
