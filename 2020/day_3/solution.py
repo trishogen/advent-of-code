@@ -5,12 +5,11 @@ def trees_encountered():
     f = open('./2020/day_3/input.txt')
     for line in f:
         l = line.rstrip('\n')
-        pattern = [char for char in l]
 
-        if pattern[idx] == '#':
+        if l[idx] == '#':
             trees += 1
 
-        idx = (idx + 3) % len(pattern)
+        idx = (idx + 3) % len(l)
 
     f.close()
     return trees
@@ -24,16 +23,11 @@ def trees_encountered_different_routes():
         [7, 1],
         [1, 2]
     ]
-
-    trees = []
+    result = 1
     forest = make_forest()
 
     for slope in slopes:
-        trees.append(toboggan_and_count(forest, slope))
-
-    result = 1
-    for tree in trees:
-        result = result * tree
+        result = result * toboggan_and_count(forest, slope)
 
     return result
 
@@ -45,8 +39,8 @@ def toboggan_and_count(forest, slope):
 
     while curr_down < len(forest):
         pattern = forest[curr_down]
-        position = pattern[curr_right]
-        if position == '#':
+
+        if pattern[curr_right] == '#':
             trees += 1
 
         curr_right = (curr_right + right) % len(pattern)
@@ -60,9 +54,8 @@ def make_forest():
     f = open('./2020/day_3/input.txt')
     for line in f:
         l = line.rstrip('\n')
-        pattern = [char for char in l]
 
-        forest.append(pattern)
+        forest.append(l)
     f.close()
 
     return forest
