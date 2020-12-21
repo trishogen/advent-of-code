@@ -1,7 +1,7 @@
 def num_valid_passwords():
     valid_passwords = 0
 
-    f = open('./2020/day_2/input.txt')
+    f = open('./2020/day_02/input.txt')
     for line in f:
         line_split = line.rstrip('\n').split(':')
         conditions = line_split[0].split(' ')
@@ -26,7 +26,7 @@ def num_valid_passwords():
 def num_valid_passwords_new_policy():
     valid_passwords = 0
 
-    f = open('./2020/day_2/input.txt')
+    f = open('./2020/day_02/input.txt')
     for line in f:
         line_split = line.rstrip('\n').split(':')
         conditions = line_split[0].split(' ')

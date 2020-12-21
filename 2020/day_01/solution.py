@@ -2,7 +2,7 @@ def report_repair_part_one():
     expenses = {}
     cur_expense, paired_expense = None, None
 
-    f = open('./2020/day_1/input.txt')
+    f = open('./2020/day_01/input.txt')
     for line in f:
         cur_expense = int(line)
         paired_expense = 2020 - cur_expense
@@ -19,7 +19,7 @@ def report_repair_part_one():
 def report_repair_part_two():
     expenses = []
 
-    f = open('./2020/day_1/input.txt')
+    f = open('./2020/day_01/input.txt')
     for line in f:
         expenses.append(int(line))
 

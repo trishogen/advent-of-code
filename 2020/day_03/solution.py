@@ -2,7 +2,7 @@ def trees_encountered():
     trees = 0
     idx = 0
 
-    f = open('./2020/day_3/input.txt')
+    f = open('./2020/day_03/input.txt')
     for line in f:
         l = line.rstrip('\n')
 
@@ -51,10 +51,9 @@ def toboggan_and_count(forest, slope):
 
 def make_forest():
     forest = []
-    f = open('./2020/day_3/input.txt')
+    f = open('./2020/day_03/input.txt')
     for line in f:
         l = line.rstrip('\n')
-
         forest.append(l)
     f.close()
 
